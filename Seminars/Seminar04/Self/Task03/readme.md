@@ -6,3 +6,53 @@ Self 03. Задание 3
 Введите В: 6,5
 5 + 6,5 = 11,5
 Справка по сравнению строк: https://learn.microsoft.com/ru-ru/dotnet/api/system.string.compare?view=net-6.0 
+namespace self03
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите код операции: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите A: ");
+            double A = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введите B: ");
+            double B = double.Parse(Console.ReadLine());
+            double result;
+            bool f = false;
+            if (B != 0)
+            {
+                switch (a)
+                {
+                    case 1:
+                        result = A + B;
+                        break;
+                    case 2:
+                        result = A - B;
+                        break;
+                    case 3:
+                        result = A * B;
+                        break;
+                    case 4:
+                        result = A / B;
+                        break;
+                    default:
+                        Console.WriteLine("Данные некорректны");
+                        result = 0;
+                        f = true;
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("B не должно быть равно 0");
+                result = 0;
+                f |= true;
+            }
+            if (!f)
+            {
+                Console.WriteLine(result);
+            }
+        }
+    }
+}
