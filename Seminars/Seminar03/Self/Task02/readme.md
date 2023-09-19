@@ -4,3 +4,44 @@ Self 02. Задание 2.
 о попадании точки во внутрь области;
 о попадании точки на границу области;
 о не принадлежности точки области.
+namespace self02
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string ans;
+            double x = double.Parse(Console.ReadLine()), y = double.Parse(Console.ReadLine());
+            if (y > 0)
+            {
+                if (Math.Sqrt(x * x + y * y) > 1 && Math.Sqrt(x * x + y * y) < 2)
+                {
+                    ans = "Точка внутри круга";
+                }
+                else
+                {
+                    if (Math.Sqrt(x * x + y * y) == 1 || Math.Sqrt(x * x + y * y) == 2)
+                    {
+                        ans = "Точка на границе круга";
+                    }
+                    else
+                    {
+                        ans = "Точка не принадлежит кругу";
+                    }
+                }
+            }
+            else
+            {
+                if (y == 0 && Math.Abs(x) >= 1 && Math.Abs(x) <= 2)
+                {
+                    ans = "Точка на границе круга";
+                }
+                else
+                {
+                    ans = "Точка не принадлежит кругу";
+                }
+            }
+            Console.WriteLine(ans);
+        }
+    }
+}
